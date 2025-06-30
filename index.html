@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AunuXdev Protection</title>
+    <style>
+        /* Reset and base */
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #121212;
+            color: #eee;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            padding: 2rem 1rem;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffea00;
+        }
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        @media(min-width: 768px) {
+            .hero {
+                flex-direction: row;
+            }
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #ffea00;
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+        .btn-primary {
+            background-color: #ffea00;
+            color: #121212;
+            padding: 0.8rem 1.8rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary:hover {
+            background-color: #f5d300;
+        }
+        .hero-image {
+            flex: 1;
+            max-width: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+        }
+        .hero-image img {
+            width: 100%;
+            display: block;
+        }
+        section.features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        @media(min-width: 768px) {
+            section.features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .feature-card {
+            background: #1e1e1e;
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(255, 234, 0, 0.5);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ffea00;
+        }
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+        .feature-desc {
+            font-size: 1rem;
+            color: #bbb;
+        }
+        section.pricing {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        section.pricing h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #ffea00;
+        }
+        .pricing-table {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        @media(min-width: 768px) {
+            .pricing-table {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .pricing-card {
+            background: #1e1e1e;
+            border-radius: 15px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            transition: box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .pricing-card:hover {
+            box-shadow: 0 8px 24px rgba(255, 234, 0, 0.5);
+        }
+        .pricing-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffea00;
+        }
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .pricing-details {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #ffea00;
+            border: 2px solid #ffea00;
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block;
+        }
+        .btn-secondary:hover {
+            background-color: #ffea00;
+            color: #121212;
+        }
+        footer {
+            background: #181818;
+            color: #777;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
+        }
+    </style>
+    <script>
+        // Simple smooth scroll for nav links
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('nav a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    document.querySelector(link.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>AunuHost</h1>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+            <a href="/home">Dstat</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" aria-label="Welcome to AunuXdev New Protection">
+            <div class="hero-text">
+                <h2>Your High Protection</h2>
+                <p>High-performance, low-latency servers optimized. Reliable uptime and 24/7 support to keep your website alive.</p>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=400" alt="Gaming server room with colorful lights" />
+            </div>
+        </section>
+
+        <section id="features" class="features" aria-label="Protection Features">
+            <div class="feature-card" tabindex="0" aria-describedby="feat1-desc">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Lightning Fast Speeds</h3>
+                <p class="feature-desc" id="feat1-desc">Experience ultra-low latency and fast server connections.</p>
+            </div>
+            <div class="feature-card" tabindex="0" aria-describedby="feat2-desc">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Secure & Reliable</h3>
+                <p class="feature-desc" id="feat2-desc">Our servers are equipped with best-in-class security and 99.9% uptime guarantee.</p>
+            </div>
+            <div class="feature-card" tabindex="0" aria-describedby="feat3-desc">
+                <div class="feature-icon">🛠️</div>
+                <h3 class="feature-title">Easy Setup & Control</h3>
+                <p class="feature-desc" id="feat3-desc">Manage your servers effortlessly with our intuitive control panel and one-click installs.</p>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing" aria-label="AunuHost pricing plans">
+                <p class="infomation" id="feat3-desc">Launched At 1 July 2025</p>
+            <h2>Choose Your Plan</h2>
+            <div class="pricing-table">
+                <div class="pricing-card" tabindex="0" aria-label="Paket 1">
+                    <h3 class="pricing-title">Paket 1</h3>
+                    <p class="pricing-price">500K<span style="font-size:1rem;font-weight:400;">/month</span></p>
+                    <p class="pricing-details">Defend Your Website 24/7, Dapat Menahan 35Jt Rps, Dapat Menahan Sampai 5Tb</p>
+                    <a href="https://t.me/@AunuXdev" class="btn-secondary" aria-label="Pilih Paket 1">Select</a>
+                </div>
+                <div class="pricing-card" tabindex="0" aria-label="Paket 2">
+                    <h3 class="pricing-title">Paket 2</h3>
+                    <p class="pricing-price">800K<span style="font-size:1rem;font-weight:400;">/month</span></p>
+                    <p class="pricing-details">Defend Your Website 24/7, Dapat Menahan 75Jt Rps. Dapat Menahan Sampai 8Tb</p>
+                    <a href="https://t.me/@AunuXdev" class="btn-secondary" aria-label="Pilih Paket 2">Select</a>
+                </div>
+                <div class="pricing-card" tabindex="0" aria-label="Paket Ambatukam :v">
+                    <h3 class="pricing-title">Ambatukammmmmmmm</h3>
+                    <p class="pricing-price">1,5Jt</p>
+                    <p class="pricing-details">Defend Your Website (Hanya Ketika Diserang, system akan dinonaktifkan jika penyerangan sudah selesai), Supported with 5 Protection, 24/7 premium support, Dapat Menahan 200Jt Rps, Dapat Menahan Sampai 20Tb</p>
+                    <a href="https://t.me/@AunuXdev" class="btn-secondary" aria-label="Pilih Paket Ambatukam">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact" aria-label="Contact AunuHost">
+                </div>
+                    <a href="https://panel.aunuhost.my.id" class="btn-secondary" aria-label="Go To Console">Console</a>
+                </div>
+                    <a href="https://t.me/AunuXdev" class="btn-secondary" aria-label="Go To Telegram">Telegram</a>
+                </div>
+                    <a href="https://youtu.be/@dwia-jg9qb" class="btn-secondary" aria-label="Go To Youtube">Youtube</a>
+                </div>
+            </form>
+        </section>
+    </main>
