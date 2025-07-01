@@ -1,0 +1,52 @@
+{
+    "sryden:stable": {
+        "heliactyl_legacy": {
+            "versions": {
+                "latest": "19.4.4",
+                "all": [
+                    "11.4.4",
+                    "12.7.1",
+                    "14.32.2",
+                    "18.8.0",
+                    "19.5.0"
+                ]
+            },
+            "codename": "Desiro Ridge"
+        },
+        "palladium": {
+            "versions": {
+                "latest": "6.1.0"
+            },
+            "codename": "Triton Lake"
+        },
+        "radar": {
+            "versions": {
+                "latest": "3.0.5"
+            },
+            "codename": "Triton Valley"
+        }
+    },
+    "sryden:next": {
+        "aunupanel": {
+            "versions": {
+                "panel": {
+                    "latest": "1.0.0-develop"
+                },
+                "daemon": {
+                    "latest": "1.0.0-develop"
+                }
+            },
+            "codename": "Triton Peak"
+        },
+        "heliactyl": {
+            "versions": {
+                "latest": "2.10.2",
+                "all": [
+                    "2.10.2"
+                ]
+            },
+            "manifest": "2nd Gen Heliactyl Next (Triton Ridge)",
+            "codename": "Triton Ridge"
+        }
+    }
+}
